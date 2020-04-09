@@ -17,8 +17,9 @@ const secondaryFont = css`{
     font-family: 'Playfair Display', serif;
 }`;
 
-export const Body = styled.main`
+export const Main = styled.main`
     ${primaryFont};
+    display: block;
     padding: 20px;
     margin: 50px auto;
    

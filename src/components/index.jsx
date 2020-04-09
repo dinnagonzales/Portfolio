@@ -5,7 +5,7 @@ import linkedIn from '../images/linkedin.png';
 import gmail from '../images/gmail.png';
 
 import { 
-    Body,
+    Main,
     Section,
     LinksSection,
 } from '../styles';
@@ -13,7 +13,7 @@ import {
 
 const Home = () => {
     return(
-        <Body>
+        <Main>
             <Section className={ 'accounts-container' }>
                 <img className={ 'logo' } src={ logo } alt='' />
                 <h1>dinna gonzales</h1>
@@ -33,7 +33,7 @@ const Home = () => {
             </LinksSection>
 
             
-        </Body>
+        </Main>
     );
 };
 export default Home;
