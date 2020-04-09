@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 import { media } from './media';
 
+const colors = {
+    white: '#fff',
+};
+
 const theme = {
     beige: '#F9FAF4',
     olive: '#4A6163',
@@ -22,73 +26,92 @@ export const Main = styled.main`
     display: block;
     padding: 20px;
     margin: 50px auto;
-   
+   text-align: center;
     ${media.mediumUp`
-        padding: 150px;
         margin: 50px auto 150px;
+    `};
+    h1{
+        padding-top: 50px;
+        font-size: 20px;
+    }
+    img{
+        max-width: 200px;
+    }
+`;
+
+export const LinksSection = styled.section`
+    margin-top: 10px; 
+`;
+
+export const PagesSection = styled.section`
+    text-align: center;
+    margin-top: 10px;
+    ${media.mediumUp`
+        text-align: right;
     `};
 `;
 
-export const Section = styled.section`
-    text-align: center;
+
+export const Header = styled.header`
+    position: relative;
+    padding: 15px;
+    height: 40px;
+    ${media.mediumUp`
+        padding: 20px 20%;
+    `};
     .logo{
         width: 50px;
-        ${media.mediumUp`
-            width: 80px;
-        `};
-    }
-
-    h1{
-        margin: -5px 0 0;
-        ${secondaryFont};
-        color: ${theme.olive};
-        font-size: 40px;
-        white-space: nowrap;
-       
-        ${media.mediumUp`
-            letter-spacing: 5px;
-            font-size: 90px;
-        `};
-    }
-    
-    h2{
-        ${primaryFont};
-        text-transform: uppercase;
-        color: ${theme.coral};
-        font-size: 12px;
-        letter-spacing: 8px;
-        margin: 0 0 15px;
-        -webkit-text-emphasis-style: open;
-        white-space: nowrap;
+        display: block;
+        margin: 0 auto 25px;
 
         ${media.mediumUp`
-            font-size: 25px;
-            margin: 0 0 35px;
+            position: absolute;
+            top: 15px;
+            width: 70px;
+            left: 15%;
         `};
     }
+}`;
+
+export const Footer = styled.footer`
+    ${primaryFont};
+    font-size: 12px;
+    background-color: ${theme.olive};
+    color: ${colors.white};
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}`;
+
+export const Link = styled.a`
+    color: ${theme.olive};
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 12px;
+    ${media.mediumUp`
+        margin-left: 55px;
+        font-size: 14px;
+    `};
 `;
 
-export const LinksSection = styled(Section)`
-    a{
-        cursor: pointer;
-        display: inline-block;
-        margin: 15px;
+export const Icon = styled.a`
+    cursor: pointer;
+    display: inline-block;
+    margin: 15px;
+    width: 30px;
+
+    ${media.mediumUp`
+        margin: 10px;
         width: 30px;
+    `};
 
-        ${media.mediumUp`
-            margin: 25px;
-            width: 80px;
-        `};
-
-        img{
-            transition: width 0.2s ease;
-            width: 90%;
-        }
-
-        &:hover{
-            img{
-                width: 100%;
-            }
-        }
+    img{
+        transition: width 0.2s ease;
+        width: 90%;
     }
 `;
