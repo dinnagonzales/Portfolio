@@ -12,22 +12,24 @@ export const Container = styled.footer`
     right: 0;
     padding: 10px;
     background-color: ${theme.background};
-    height: 130px;
+    height: 100px;
 
     text-align: center;
 
     ${media.mediumUp`
-        padding: 30px;
+        height: 130px;
+        padding: 20px;
     `};
 
     .copyright{
         position: absolute;
-        bottom: 15px;
+        bottom: 10px;
         left: 0;
         right: 0;
         font-size: 11px;
         ${media.mediumUp`
             font-size: 12px;
+            bottom: 10px;
         `};
     }
 `;
@@ -37,15 +39,21 @@ export const ConnectImg = styled.img`
     margin: 0 auto 5px;
     width: 150px;
 
-    ${media.mediumUp`width: 20%;
+    ${media.mediumUp`
         width: 200px;
+        margin: 0 auto;
     `};
 `;
 
 export const FooterButton = styled.a`
     display: inline-block;
-    padding: 15px;
-    height: 60px;
+    padding: 5px;
+    height: 40px;
+
+    ${media.mediumUp`
+        padding: 15px;
+        height: 60px;
+    `};
 `;
 
 export const Img = styled.img`

@@ -4,13 +4,14 @@ import { media } from './media';
 import bodyRight from '../images/body-right.png';
 
 export const Container = styled.main`
-    background: url( ${bodyRight} ) right center no-repeat;
     text-align: center;
     background-size: 150px;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
    
     ${media.mediumUp`
+        background: url( ${bodyRight} ) right center no-repeat;
         background-size: 300px;
+        padding-bottom: 150px;
     `};
 
     img{

@@ -6,16 +6,14 @@ import top from '../images/top.png';
 export const Container= styled.header`
     background-image: url( ${top} );
     background-repeat: no-repeat;
-   
-    
     text-align: center;
-    height 250px;
     width: 100%;
-
+    height 150px;
     background-size: 90%;
     background-position: top left -300%;
     
     ${media.mediumUp`
+        height 250px;
         background-size: 50%;
         background-position: top left 13%;
     `};
