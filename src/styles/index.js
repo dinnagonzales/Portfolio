@@ -6,6 +6,8 @@ export const colors = {
     burnt: '#ce8523',
     terra: '#b35417',
     olive: '#354739',
+    navy: '#2f4d6a',
+    mustard: '#d59229',
 };
 
 export const theme = {
