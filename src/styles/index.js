@@ -8,6 +8,8 @@ export const colors = {
     olive: '#354739',
     navy: '#2f4d6a',
     mustard: '#d59229',
+    white: '#fff',
+    grey: '#333',
 };
 
 export const theme = {
@@ -17,11 +19,16 @@ export const theme = {
     background: colors.sand,
 };
 
-const primaryFont = css`{
+export const primaryFont = css`{
     font-family: 'Lato', sans-serif;
 }`;
 
-const secondaryFont = css`{
+export const secondaryFont = css`{
     font-family: 'Playfair Display', serif;
 }`;
 
+export const Container= styled.div`
+    .hidden{
+        display: none;
+    }
+`;

@@ -19,7 +19,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(pdf|png|jpe?g|gif)$/i,
                 use: [
                     {
                         loader: 'file-loader',
@@ -63,7 +63,7 @@ module.exports = {
         new CleanWebpackPlugin(), // Clean output.path folder
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            title: 'Dinna Gonzales',
+            title: 'Dinna Gonzales | Portfolio',
             chunks: ['main'],
             template: 'src/page-template.hbs',
         }),

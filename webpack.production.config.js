@@ -8,8 +8,7 @@ module.exports = {
     output: { // Output file - generated file
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, './docs'),
-        publicPath: '', // Tells webpack where all generated files are found
-        // publicPath: 'http://dinnagonzales.com/',                //online
+        publicPath: 'http://dinnagonzales.com/',                //online
     },
     mode: 'production',
     optimization: {
@@ -24,7 +23,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(pdf|png|jpe?g|gif)$/i,
                 use: [
                     {
                         loader: 'file-loader',

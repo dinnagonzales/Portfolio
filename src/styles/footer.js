@@ -18,7 +18,7 @@ export const Container = styled.footer`
 
     ${media.mediumUp`
         height: 130px;
-        padding: 20px;
+        padding: 15px;
     `};
 
     .copyright{
