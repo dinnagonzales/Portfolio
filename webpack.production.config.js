@@ -8,7 +8,7 @@ module.exports = {
     output: { // Output file - generated file
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, './docs'),
-        publicPath: 'http://dinnagonzales.com/',                //online
+        publicPath: '',                //online
     },
     mode: 'production',
     optimization: {
