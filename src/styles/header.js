@@ -13,7 +13,7 @@ export const Container= styled.header`
     background-position: top left -300%;
     
     ${media.mediumUp`
-        height 250px;
+        height 200px;
         background-size: 50%;
         background-position: top left 13%;
     `};

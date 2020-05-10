@@ -45,16 +45,15 @@ export const Button = styled.a`
     border-radius: 4px;
     font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 5px;
     vertical-align: middle;
     color: ${theme.primary};
     background: ${colors.white};
     border: 1px solid ${theme.primary};
 
+    letter-spacing: 1px;
     font-size: 12px;
     ${media.mediumUp`
         font-size: 14px;
-        padding: 20px;
     `};
 
     &:hover,
@@ -64,25 +63,17 @@ export const Button = styled.a`
     }
 `;
 
-export const TwitterButton = styled(Button)`
-    margin-left: 10px;
-    padding: 5px 10px;
-
-    img{
-        height: 50px;
-        vertical-align: middle;
-    }
-`;
-
 
 export const Content = styled.article`
     border-radius: 5px;
     margin: 50px auto 20px;
     ${media.mediumUp`
+        box-shadow: rgb(235,229,219) 2px 3px 0px;
+        width: 240px;
+        margin: 0 auto;
         border: 1px solid ${theme.background};
         background: ${colors.white};
-        box-shadow: 5px 10px 14px ${theme.background};
-        margin: 0 30%;
+
         padding: 40px;
     `};
 `;
