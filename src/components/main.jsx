@@ -1,7 +1,6 @@
 import React from 'react';
 
 import hello from '../images/hello.png'
-import tweet from '../images/twitter.png';
 
 import resume from '../misc/resume.pdf';
 
@@ -9,7 +8,6 @@ import {
     Container,
     Button,
     Content,
-    TwitterButton,
 } from '../styles/main';
 
 

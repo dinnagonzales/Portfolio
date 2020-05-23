@@ -23,11 +23,11 @@ const Footer = () => {
                 <Img src={ git } alt={ '' } />
             </FooterButton>
             
-            <FooterButton href={ 'https://linkedin.com/in/dinnagonzales' } aria-label={ 'Go to my Linked in account' }>
+            <FooterButton href={ 'https://linkedin.com/in/dinnagonzales' } target={ '_blank' } aria-label={ 'Go to my Linked in account' }>
                 <Img src={ linkedin } alt={ '' } />
             </FooterButton>
 
-            <FooterButton href={ 'mailto:dinnapgonzales@gmail.com' } aria-label={ 'Email me - dinnapgonzales@gmail.com' }>
+            <FooterButton href={ 'mailto:dinnapgonzales@gmail.com' } target={ '_blank' } aria-label={ 'Email me - dinnapgonzales@gmail.com' }>
                 <Img src={ email } alt={ '' } />
             </FooterButton>
 

@@ -21,7 +21,7 @@ export const Container= styled.header`
 
 export const NameImg = styled.img`
     width: 60%;
-    max-width: 150px;
+    max-width: 120px;
     display: inline-block;
 
     margin-bottom: 5px;
@@ -30,21 +30,18 @@ export const NameImg = styled.img`
     ${media.mediumUp`
         width: 10%;
         margin-bottom: 10px;
-        margin-top: 55px;
+        margin-top: 45px;
         min-width: 150px;
-        max-width: none;
-
     `};
 `;
 export const LabelImg = styled.img`
     width: 70%;
-    max-width: 250px;
+    max-width: 200px;
     margin-top: 5px;
     display: block;
     margin: 0 auto;
     ${media.mediumUp`
         width: 20%;
         min-width: 250px;
-        max-width: none;
     `};
 `;
