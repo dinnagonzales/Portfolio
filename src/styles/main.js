@@ -9,30 +9,12 @@ export const Container = styled.main`
     text-align: center;
     background-size: 150px;
     padding-bottom: 100px;
-
+    width: 100%;
     ${media.mediumUp`
         background: url( ${bodyRight} ) right center no-repeat;
         background-size: 300px;
         padding-bottom: 150px;
     `};
-
-    .WelcomeText{
-        display: block;
-        max-width: 200px;
-        margin: 0 auto 10px;
-        ${media.mediumUp`
-            max-width:100%;
-        `};
-    }
-    .ComingSoon{
-        color: ${colors.grey};
-        font-size: 14px;
-        width: 250px;
-        margin: 0 auto 30px;
-        ${media.mediumUp`
-            font-size: 20px;
-        `};
-    }
 `;
 
 export const Button = styled.a`
@@ -67,13 +49,35 @@ export const Button = styled.a`
 export const Content = styled.article`
     border-radius: 5px;
     margin: 50px auto 20px;
+    text-align: center;
+    height: auto;
+    max-width: calc(100% - 40px);
+
     ${media.mediumUp`
         box-shadow: rgb(235,229,219) 2px 3px 0px;
-        width: 240px;
-        margin: 0 auto;
         border: 1px solid ${theme.background};
+        width: 1200px;
+        max-width: 80%;
+        margin: 0 auto;
         background: ${colors.white};
-
         padding: 40px;
     `};
+
+    .WelcomeText{
+      display: block;
+      max-width: 200px;
+      margin: 0 auto 10px;
+      ${media.mediumUp`
+          max-width:100%;
+      `};
+    }
+    .ComingSoon{
+        display: block;
+        color: ${colors.grey};
+        font-size: 14px;
+        margin: 0 auto 30px;
+        ${media.mediumUp`
+            font-size: 18px;
+        `};
+    }
 `;
