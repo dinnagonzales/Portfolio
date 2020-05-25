@@ -1,13 +1,13 @@
 import React from 'react';
 
-import name from '../images/name.png';
-import fe from '../images/fe-dev.png';
+import name from '../../images/name.png';
+import fe from '../../images/fe-dev.png';
 
 import { 
     Container,
     NameImg,
     LabelImg,
-} from '../styles/header';
+} from '../../styles/main/header';
 
 
 const Header = () => {

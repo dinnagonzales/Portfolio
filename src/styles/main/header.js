@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { media } from './media';
+import { media } from '../media';
 
-import top from '../images/top.png';
+import top from '../../images/top.png';
 
 export const Container= styled.header`
     background-image: url( ${top} );

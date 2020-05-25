@@ -1,17 +1,17 @@
 import React from 'react';
 
-import connect from '../images/connect.png';
+import connect from '../../images/connect.png';
 
-import git from '../images/git-logo.png';
-import linkedin from '../images/linkedin.png';
-import email from '../images/email.png';
+import git from '../../images/git-logo.png';
+import linkedin from '../../images/linkedin.png';
+import email from '../../images/email.png';
 
 import { 
     Container,
     ConnectImg,
     Img,
     FooterButton,
-} from '../styles/footer';
+} from '../../styles/main/footer';
 
 
 const Footer = () => {

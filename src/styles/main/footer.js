@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import { theme } from './index';
-import { media } from './media';
+import { theme } from '../index';
+import { media } from '../media';
 
-import leftBg from '../images/footer-left.png';
-import rightBg from '../images/footer-right.png';
+import leftBg from '../../images/footer-left.png';
+import rightBg from '../../images/footer-right.png';
 
 export const Container = styled.footer`
     position: absolute;
