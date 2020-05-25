@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 
-import Header from './header.jsx';
+import Header from './main/header.jsx';
+import Footer from './main/footer.jsx';
+
 import Main from './main.jsx';
-import Footer from './footer.jsx';
 
 import {
     Container,

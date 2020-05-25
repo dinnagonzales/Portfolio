@@ -1,30 +1,41 @@
 import React from 'react';
 
-import hello from '../images/hello.png'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom';
 
+import Days from './days/index.jsx';
+import hello from '../images/hello.png'
 import resume from '../misc/resume.pdf';
 
 import { 
-    Container,
+    ContentContainer,
     Button,
-    Content,
+    ContentBody,
 } from '../styles/main';
 
 
 const Main = () => {
     return(
-        <Container>
-            <Content>
+        <ContentContainer>
+            <Days />
+            <ContentBody>
                 <img className={ 'WelcomeText' } src={ hello } alt={ 'Hello!' } />
                 <h2 className={ 'ComingSoon' }>
-                    Thanks for stopping by. <br />
-                    More content to come soon!
+                    Thanks for stopping by!
+                    My name is Dinna Gonzales, a Frontend Developer from Los Angeles!
+                    As of 5.25.2020, I am commiting to #100DaysOfCode and all my progress
+                    will be documented here.
+                    <br />
                 </h2>
                 <Button href={ resume } target={ '_blank' }>
                     Download my resume
                 </Button>
-            </Content>
-        </Container>
+            </ContentBody>
+        </ContentContainer>
     );
 };
 export default Main;
