@@ -54,7 +54,7 @@ export const ContentBody = styled.article.attrs({
 })`
     display: inline-block;
     border-radius: 5px;
-    margin: 50px auto 20px;
+    margin: 50px 20px 20px 0;
     text-align: center;
     height: auto;
 

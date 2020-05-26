@@ -10,17 +10,15 @@ import oddCount from '../../images/number-green.png'
 export const DaysContainer = styled.article.attrs({
     className: 'DaysContainer'
 })`
-    border: 1px solid red;
     width: 100%;
-
     border-radius: 5px;
-    margin: 50px auto 20px;
+    margin: 20px auto 20px;
     text-align: center;
     height: auto;
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 15px;
+    grid-gap: 20px;
 
     ${media.mediumUp`
         grid-template-columns: 1fr 1fr;
@@ -41,8 +39,38 @@ export const DayContainer = styled.div.attrs({
     className: 'DayContainer'
 })`
     border: 1px solid ${theme.background};
+    padding: 15px;
+    text-align: left;
 `;
+export const ProjectInfo = styled.div.attrs({
+    className: 'ProjectInfo'
+})`
+    background: ${theme.background};
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
 
+    h2{
+        margin: 0;
+    }
+    a{
+        color: ${theme.primary};
+        text-decoration: none;
+    }
+    p{
+        font-size: 13px;
+        line-height: 20px;
+        margin: 30px 0 5px 0;
+        ${media.mediumUp`
+            font-size: 15px;
+            line-height: 20px;
+        `};
+    }
+    .date{
+        text-align: right;
+        font-size: 12px;
+    }
+`;
 export const DayCount = styled.div.attrs({
     className: 'DayCount',
     'aria-label': `${ ({day}) => `Day ${day}`}`,

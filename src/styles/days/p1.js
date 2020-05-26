@@ -6,14 +6,19 @@ export const ProjectOne = styled.div.attrs({
     className: 'ProjectOne'
 })`
     .container{
+        border: 1px solid #c3996c;
+        box-shadow: rgb(235,229,219) 5px 5px 0px;
+        background: #c3996c;
+        border-radius: 50%;
         margin: 40px auto;
         width: 300px;
+        height: 300px;
         position: relative;
     }
 
     .bear,
     .bear-copy{
-        margin: 20px auto 10px;
+        margin: 80px auto 10px;
         background: #754d29;
         width: 150px;
         height: 150px;
@@ -22,6 +27,9 @@ export const ProjectOne = styled.div.attrs({
         position: relative;
     }
 
+    .bear{
+        box-shadow: rgb(235,229,219) 5px 5px 0px;
+    }
     .bear-copy{
         z-index: 3;
     }
@@ -96,20 +104,11 @@ export const ProjectOne = styled.div.attrs({
             border-right: 10px solid transparent;
             border-top: 10px solid #000;
         }
-        .smile{
-            display: none;
-            background: #8c603d;
-            width: 30px;
-            height: 15px;
-            border-bottom: 2px solid #000;
-            position: relative;
-            top: -35px;
-            margin: 0 auto;
-        }
+
         .mouth{
-            margin: 10px auto;
-            width: 15px;
-            height: 15px;
+            margin: 20px auto 10px;
+            width: 10px;
+            height: 10px;
             border: 3px solid #000;
             border-radius: 50%;
         }
