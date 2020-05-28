@@ -18,13 +18,14 @@ const Days = () => {
                 const {
                     title,
                     date,
+                    count,
                     tutorial,
                     blurb
                 } = project;
                 
                 return(
                     <DayContainer key={ `${i}_project` }>
-                        <DayCount day={ i+1 } even={ isEven }>
+                        <DayCount count={ count } even={ isEven }>
                             <div className={ 'number' } />
                         </DayCount>
                         <Component />

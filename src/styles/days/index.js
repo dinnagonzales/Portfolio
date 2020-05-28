@@ -85,7 +85,7 @@ export const DayCount = styled.div.attrs({
     .number{
         background-image: url(${ ({even}) => even ? evenCount : oddCount });
         background-repeat: no-repeat;
-        background-position: ${ ({day}) => day && (day) }px center;
+        background-position: ${ ({count}) => count ? (count) : '1' }px center;
         width: 20px;
         height: 40px;
         position: absolute;
