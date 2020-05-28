@@ -78,6 +78,7 @@ export const ContentBody = styled.article.attrs({
       grid-row-start: span 2;
     }
     .ComingSoon{
+        font-weight: normal;
         line-height: 20px;
         text-align: left;
         color: ${colors.grey};

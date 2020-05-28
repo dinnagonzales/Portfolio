@@ -7,6 +7,7 @@ import {
     Link
 } from 'react-router-dom';
 
+import TimodoroApp from './projects/timodoro/index.jsx';
 import Days from './days/index.jsx';
 import hello from '../images/hello.png'
 import resume from '../misc/resume.pdf';
@@ -20,19 +21,21 @@ import {
 
 const Main = () => {
     return(
-        <ContentContainer>
+        <ContentContainer>                    
+            <TimodoroApp />
             <Days />
+
             <ContentBody>
                 <img className={ 'WelcomeText' } src={ hello } alt={ 'Hello!' } />
                 <h2 className={ 'ComingSoon' }>
-                    Thanks for stopping by!
-                    My name is Dinna Gonzales, a Frontend Developer from Los Angeles!
-                    As of 5.25.2020, I am commiting to #100DaysOfCode and all my progress
-                    will be documented here.
+                        Thanks for stopping by!
+                        My name is Dinna Gonzales, a Frontend Developer from Los Angeles!
+                        As of 5.25.2020, I am commiting to #100DaysOfCode and all my progress
+                        will be documented here.
                     <br />
                 </h2>
                 <Button href={ resume } target={ '_blank' }>
-                    Download my resume
+                        Download my resume
                 </Button>
             </ContentBody>
         </ContentContainer>

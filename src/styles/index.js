@@ -28,6 +28,7 @@ export const secondaryFont = css`{
 }`;
 
 export const Container= styled.div`
+    ${primaryFont};
     overflow-x: hidden;
     height: auto;
     position: relative;
