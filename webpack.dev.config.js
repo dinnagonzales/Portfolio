@@ -10,6 +10,9 @@ module.exports = {
         publicPath: '', // Tells webpack where all generated files are found
         // publicPath: 'http://dinnagonzales.com/',                //online
     },
+    devServer: {
+        historyApiFallback: true,
+    },
     mode: 'development',
     devServer: {
         contentBase: path.resolve(__dirname, './dev'),
