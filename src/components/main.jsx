@@ -1,13 +1,5 @@
 import React from 'react';
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom';
-
-import TimodoroApp from './projects/timodoro/index.jsx';
 import Days from './days/index.jsx';
 import hello from '../images/hello.png'
 import resume from '../misc/resume.pdf';
@@ -22,9 +14,7 @@ import {
 const Main = () => {
     return(
         <ContentContainer>                    
-            <TimodoroApp />
             <Days />
-
             <ContentBody>
                 <img className={ 'WelcomeText' } src={ hello } alt={ 'Hello!' } />
                 <h2 className={ 'ComingSoon' }>

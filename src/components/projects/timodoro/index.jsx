@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import _ from 'lodash';
 
-const Timodoro = ({ data }) => {
-    console.log(data);
+import {
+    TimodoroContainer,
+    TimodoroForm,
+} from './styles';
 
+const Timodoro = (props) => {
+    const { title, timers } = props.data;
     return(
-        <div>
-            Timodoro - { data.title }
-        </div>
+        <TimodoroContainer>
+            Timodoro - { title }
+            <ol>
+                { timers.map((t, i) => {
+                    const { name, duration } = t;
+                    return(
+                        <li key={ `${name}_${i}` }>
+                            { name }: { duration }
+                        </li>
+                    )
+                })}
+            </ol>
+        </TimodoroContainer>
     )
 };
 
@@ -19,14 +33,11 @@ const newTimer = {
 const TimodoroApp = () => {
     const storage = window.localStorage.getItem('timodoros');
     const timodoros = !_.isNull(storage) ? JSON.parse(storage) : [];
-
     
     const [ timodoro, saveTimodoro ] = useState({
         title: '',
         timers: [ newTimer ],
     });
-    
-    console.log(timodoro);
 
     const udpateTitle = (value) => {
         let updatedTimodoro = _.cloneDeep(timodoro);
@@ -43,7 +54,7 @@ const TimodoroApp = () => {
     };
 
     return(
-        <div>
+        <TimodoroForm>
             Timodoro App
             { !_.isEmpty(timodoros) ?
                 timodoros.map((timodoro, i) => {
@@ -88,7 +99,7 @@ const TimodoroApp = () => {
                     Save Timodoro
                 </button>
             </form>
-        </div>
+        </TimodoroForm>
     );
 };
 export default TimodoroApp;

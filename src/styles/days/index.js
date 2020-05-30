@@ -71,24 +71,3 @@ export const ProjectInfo = styled.div.attrs({
         font-size: 12px;
     }
 `;
-export const DayCount = styled.div.attrs({
-    className: 'DayCount',
-    'aria-label': `${ ({day}) => `Day ${day}`}`,
-})`
-    background-image: url(${ ({even}) => even ? evenDay : oddDay });
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    height: 40px;
-    width: 80px;
-    position: relative;
-
-    .number{
-        background-image: url(${ ({even}) => even ? evenCount : oddCount });
-        background-repeat: no-repeat;
-        background-position: ${ ({count}) => count ? (count) : '1' }px center;
-        width: 20px;
-        height: 40px;
-        position: absolute;
-        right: 0;
-    }
-`;
