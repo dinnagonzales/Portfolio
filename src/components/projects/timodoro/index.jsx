@@ -1,47 +1,13 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState  } from 'react';
 import _ from 'lodash';
-import { prepTimers, useInterval } from '../helpers';
+
+import Timodoro from './timodoro.jsx';
+
 import {
-    TimodoroContainer,
     TimodoroForm,
 } from './styles';
 
-const Timodoro = (props) => {
-    const { title, timers } = props.data;
-
-    const [ current, updateCurrent ] = useState(0);
-    const [ status, updateStatus ] = useState('STOP');
-
-    useInterval(() => {
-        updateCurrent(current + 1);
-    }, status === 'START' ? 1000 : null);
-
-    useEffect(() => {
-        if(status === 'STOP'){
-            return updateCurrent(0);
-        }
-    }, [ status ]);
-
-    return(
-        <TimodoroContainer>
-            Timodoro - { title }
-
-            <button onClick={ () => updateStatus('START') }>Start</button>
-            <button onClick={ () => updateStatus('STOP') }>Stop</button>
-            <button onClick={ () => updateStatus('PAUSE') }>Pause</button>
-            <ol>
-                { timers.map((t, i) => {
-                    const { name, duration } = t;
-                    return(
-                        <li key={ `${name}_${i}` }>
-                            { name }: { duration } { status === 'START' && current >= parseInt(t.start) && current <= parseInt(t.end)  ? "ACTIVE" : "." }
-                        </li>
-                    )
-                })}
-            </ol>
-        </TimodoroContainer>
-    )
-};
+import { prepTimers } from '../helpers';
 
 const newTimer = { 
     duration: '',
@@ -51,8 +17,9 @@ const newTimer = {
 const TimodoroApp = () => {
     const storage = window.localStorage.getItem('timodoros');
     const timodoros = !_.isNull(storage) ? JSON.parse(storage) : [];
+    const [ errors, toggleErrors ] = useState(false);
 
-    const [ timodoro, saveTimodoro ] = useState({
+    const [ timodoro, setTimodoro ] = useState({
         title: '',
         timers: [ newTimer ],
     });
@@ -61,16 +28,38 @@ const TimodoroApp = () => {
         let updatedTimodoro = _.cloneDeep(timodoro);
         updatedTimodoro.title = value;
 
-        saveTimodoro(updatedTimodoro);
+        setTimodoro(updatedTimodoro);
     };
 
+    const removeTimer = (i) => {
+        let timers =  _.cloneDeep(timodoro.timers);
+        timers.splice(i, 1);
+
+        setTimodoro({ ...timodoro, timers });
+    };
+    
     const udpateTimer = (index, key, value) => {
         let updatedTimodoro = _.cloneDeep(timodoro);
         updatedTimodoro.timers[index][key] = value;
 
-        saveTimodoro(updatedTimodoro);
+        setTimodoro(updatedTimodoro);
     };
 
+    const validate = () => {
+        const title = !!timodoro.title.length;
+        const timers = timodoro.timers.every((t) => !!t.duration.length && !!t.duration.length);
+
+        return title && timers;
+    };
+
+    const saveTimodoro = () => {
+        const newTimpodoro = prepTimers(timodoro);
+        window.localStorage.setItem('timodoros', JSON.stringify([ ...timodoros, newTimpodoro ]));
+        setTimodoro({
+            title: '',
+            timers: [ newTimer ],
+        });
+    }
     return(
         <TimodoroForm>
             Timodoro App
@@ -83,6 +72,7 @@ const TimodoroApp = () => {
 
             Create a Timodoro
             <form>
+                <p>{ errors ? 'Please correct errors on form' : '!!!!' }</p>
                 <label htmlFor={ 'title '}>Set Name</label>
                 <input type={ 'text' } name={ 'title' } onChange={ (e) => udpateTitle(e.currentTarget.value) } value={ timodoro.title } />
 
@@ -93,29 +83,43 @@ const TimodoroApp = () => {
                             <input type={ 'text' } name={ 'name' } onChange={ (e) => udpateTimer(i, 'name', e.currentTarget.value) } value={ t.name } />
                             <label htmlFor={ 'duration' }>Duration(in minutes)</label>
                             <input type={ 'text' } name={ 'duration' } onChange={ (e) => udpateTimer(i, 'duration', e.currentTarget.value) } value={ t.duration } />
+                            <button onClick={ (e) => { e.preventDefault(); removeTimer(i); }}>
+                                X
+                            </button>
                         </fieldset>
+                        
                     )
                 })}
+
                 <button onClick={ (e) => {
                     e.preventDefault();
                     let updatedTimodoro = _.cloneDeep(timodoro);
                     updatedTimodoro.timers.push(newTimer);
 
-                    saveTimodoro(updatedTimodoro);
+                    setTimodoro(updatedTimodoro);
                 }}>
                     Add a timer
                 </button>
 
                 <button onClick={ (e) => {
                     e.preventDefault();
-                    const newTimpodoro = prepTimers(timodoro);
-                    window.localStorage.setItem('timodoros', JSON.stringify([ ...timodoros, newTimpodoro ]));
-                    saveTimodoro({
+                    if(validate()){
+                        toggleErrors(false);
+                        saveTimodoro();
+                    }else{
+                        toggleErrors(true);
+                    }
+                } } type="submit">
+                    Save Timodoro
+                </button>
+                <button onClick={ (e) => {
+                    e.preventDefault();
+                    setTimodoro({
                         title: '',
                         timers: [ newTimer ],
                     });
-                } } type="submit">
-                    Save Timodoro
+                } } type="reset">
+                    Reset
                 </button>
             </form>
         </TimodoroForm>
