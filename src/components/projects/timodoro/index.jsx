@@ -1,9 +1,10 @@
 import React, { useState  } from 'react';
 import _ from 'lodash';
 
-import Timodoro from './timodoro.jsx';
+import Timodoros from './timodoros.jsx';
 
 import {
+    TimodoroAppContainer,
     TimodoroForm,
 } from './styles';
 
@@ -31,13 +32,6 @@ const TimodoroApp = () => {
         setTimodoro(updatedTimodoro);
     };
 
-    const removeTimer = (i) => {
-        let timers =  _.cloneDeep(timodoro.timers);
-        timers.splice(i, 1);
-
-        setTimodoro({ ...timodoro, timers });
-    };
-    
     const udpateTimer = (index, key, value) => {
         let updatedTimodoro = _.cloneDeep(timodoro);
         updatedTimodoro.timers[index][key] = value;
@@ -45,6 +39,13 @@ const TimodoroApp = () => {
         setTimodoro(updatedTimodoro);
     };
 
+    const removeTimer = (i) => {
+        let timers =  _.cloneDeep(timodoro.timers);
+        timers.splice(i, 1);
+
+        setTimodoro({ ...timodoro, timers });
+    };
+    
     const validate = () => {
         const title = !!timodoro.title.length;
         const timers = timodoro.timers.every((t) => !!t.duration.length && !!t.duration.length);
@@ -59,20 +60,15 @@ const TimodoroApp = () => {
             title: '',
             timers: [ newTimer ],
         });
-    }
-    return(
-        <TimodoroForm>
-            Timodoro App
-            { !_.isEmpty(timodoros) ?
-                timodoros.map((timodoro, i) => {
-                    return <Timodoro key={ `${i}_timodoro` } data={ timodoro } />
-                })
-                : <p>No Timodoros saved</p>
-            }
+    };
 
-            Create a Timodoro
-            <form>
-                <p>{ errors ? 'Please correct errors on form' : '!!!!' }</p>
+    return(
+        <TimodoroAppContainer>
+            <Timodoros timodoros={ timodoros } />
+
+            <TimodoroForm>
+                <h1>Create a Timodoro</h1>
+                <p>{ errors && 'Please correct errors on form' }</p>
                 <label htmlFor={ 'title '}>Set Name</label>
                 <input type={ 'text' } name={ 'title' } onChange={ (e) => udpateTitle(e.currentTarget.value) } value={ timodoro.title } />
 
@@ -86,8 +82,7 @@ const TimodoroApp = () => {
                             <button onClick={ (e) => { e.preventDefault(); removeTimer(i); }}>
                                 X
                             </button>
-                        </fieldset>
-                        
+                        </fieldset>   
                     )
                 })}
 
@@ -95,7 +90,6 @@ const TimodoroApp = () => {
                     e.preventDefault();
                     let updatedTimodoro = _.cloneDeep(timodoro);
                     updatedTimodoro.timers.push(newTimer);
-
                     setTimodoro(updatedTimodoro);
                 }}>
                     Add a timer
@@ -112,6 +106,7 @@ const TimodoroApp = () => {
                 } } type="submit">
                     Save Timodoro
                 </button>
+
                 <button onClick={ (e) => {
                     e.preventDefault();
                     setTimodoro({
@@ -121,8 +116,9 @@ const TimodoroApp = () => {
                 } } type="reset">
                     Reset
                 </button>
-            </form>
-        </TimodoroForm>
+
+            </TimodoroForm>
+        </TimodoroAppContainer>
     );
 };
 export default TimodoroApp;
