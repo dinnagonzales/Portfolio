@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import _ from 'lodash';
-
+import { prepTimers, useInterval } from '../helpers';
 import {
     TimodoroContainer,
     TimodoroForm,
@@ -8,15 +8,33 @@ import {
 
 const Timodoro = (props) => {
     const { title, timers } = props.data;
+
+    const [ current, updateCurrent ] = useState(0);
+    const [ status, updateStatus ] = useState('STOP');
+
+    useInterval(() => {
+        updateCurrent(current + 1);
+    }, status === 'START' ? 1000 : null);
+
+    useEffect(() => {
+        if(status === 'STOP'){
+            return updateCurrent(0);
+        }
+    }, [ status ]);
+
     return(
         <TimodoroContainer>
             Timodoro - { title }
+
+            <button onClick={ () => updateStatus('START') }>Start</button>
+            <button onClick={ () => updateStatus('STOP') }>Stop</button>
+            <button onClick={ () => updateStatus('PAUSE') }>Pause</button>
             <ol>
                 { timers.map((t, i) => {
                     const { name, duration } = t;
                     return(
                         <li key={ `${name}_${i}` }>
-                            { name }: { duration }
+                            { name }: { duration } { status === 'START' && current >= parseInt(t.start) && current <= parseInt(t.end)  ? "ACTIVE" : "." }
                         </li>
                     )
                 })}
@@ -33,7 +51,7 @@ const newTimer = {
 const TimodoroApp = () => {
     const storage = window.localStorage.getItem('timodoros');
     const timodoros = !_.isNull(storage) ? JSON.parse(storage) : [];
-    
+
     const [ timodoro, saveTimodoro ] = useState({
         title: '',
         timers: [ newTimer ],
@@ -90,7 +108,8 @@ const TimodoroApp = () => {
 
                 <button onClick={ (e) => {
                     e.preventDefault();
-                    window.localStorage.setItem('timodoros', JSON.stringify([ ...timodoros, timodoro ]));
+                    const newTimpodoro = prepTimers(timodoro);
+                    window.localStorage.setItem('timodoros', JSON.stringify([ ...timodoros, newTimpodoro ]));
                     saveTimodoro({
                         title: '',
                         timers: [ newTimer ],
