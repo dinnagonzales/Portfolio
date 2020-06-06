@@ -21,8 +21,6 @@ export const DaysContainer = styled.article.attrs({
     grid-gap: 20px;
 
     ${media.mediumUp`
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 15px;
         box-shadow: rgb(235,229,219) 2px 3px 0px;
         border: 1px solid ${theme.background};
         width: 1200px;
