@@ -18,11 +18,7 @@ const Main = () => {
             <ContentBody>
                 <img className={ 'WelcomeText' } src={ hello } alt={ 'Hello!' } />
                 <h2 className={ 'ComingSoon' }>
-                        Thanks for stopping by!
-                        My name is Dinna Gonzales, a Frontend Developer from Los Angeles!
-                        As of 5.25.2020, I am commiting to #100DaysOfCode and all my progress
-                        will be documented here.
-                    <br />
+                    Welcome! Thanks for stopping by.
                 </h2>
                 <Button href={ resume } target={ '_blank' }>
                         Download my resume

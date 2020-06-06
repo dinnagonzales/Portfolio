@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 
 import Header from './main/header.jsx';
+import Navigation from './main/navigation.jsx';
 import Footer from './main/footer.jsx';
 import TimodoroApp from './projects/timodoro/index.jsx';
 
@@ -22,19 +23,9 @@ export default function App() {
         <Router>
             <Container>
                 <Header />
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/about">Timodoro</Link>
-                        </li>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                    </ul>
-                </nav>
-
+                <Navigation />
                 <Switch>
-                    <Route path="/about">
+                    <Route path="/timodoro">
                         <TimodoroApp />
                     </Route>
                     <Route path="/">
