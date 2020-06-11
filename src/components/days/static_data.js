@@ -3,20 +3,20 @@ import Two from './projects/p2.jsx';
 
 export const OneHundredDays = [
     {
-        title: 'HTML+CSS only - Radio',
-        date: 'June 6',
-        count: '-35',
+        title: 'Groovy Radio Project',
+        date: 'June 10',
         component: Two,
         tutorial: '',
-        blurb: `Happy witht this! Set it up for my 'Timodoro' project`,
+        blurb: `My second CSS only image. Having fun with this and excited to plug in a timer project I'm
+        currently polishing up.`
     },
     {
-        title: 'Work in Progress- A Life Story',
+        title: 'Scare Bear',
         date: 'May 25',
-        count: '1',
         component: One,
         tutorial: 'https://medium.com/coding-artist/a-beginners-guide-to-pure-css-images-ef9a5d069dd2#.y185e0b6d',
-        blurb: `It's finally here! My portfolio! A work-in-progress portfolio! I've been meaning to get this page up for a while now. I've been crippled from starting because
+        blurb: 'My first stab at creating an images using CSS only.',
+        Oldblurb: `It's finally here! My portfolio! A work-in-progress portfolio! I've been meaning to get this page up for a while now. I've been crippled from starting because
         I wanted this space to be spotless. The 'best design and layout' with 'x number of projects'. A true to life rendition of 'perfect never gets done'. With all the time
          I now have in my hands, being in quarantine and all, I finally bucked up and decided that this space will not be spotless. Instead, it will be just that- something that
          takes up space. This will be my tiny corner in the vast universe that is the internet and it will showcase whatever I am working on outside of my day job. I don't want this first

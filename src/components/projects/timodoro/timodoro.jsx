@@ -10,7 +10,7 @@ const Timodoro = (props) => {
 
     const [ current, updateCurrent ] = useState(0);
     const [ status, updateStatus ] = useState('STOP');
-
+    console.log(current);
     useInterval(() => {
         updateCurrent(current + 1);
     }, status === 'START' ? 1000 : null);

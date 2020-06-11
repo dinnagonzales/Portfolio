@@ -23,9 +23,9 @@ const Two = () => {
                         </ul>
                         <ul className={ 'labels' }>
                             <li>{ '<<' }</li>
-                            <li>{ '>>' }</li>
                             <li>Play</li>
                             <li>Stop</li>
+                            <li>{ '>>' }</li>
                             <li>Eject</li>
                         </ul>
                     </div>
@@ -49,7 +49,7 @@ const Two = () => {
                     </div>
                     
                     <div className={'radio-main-bottom'}>
-                        <div className={'radio-main-bottom_speaker'}>
+                        <div className={'radio-main-bottom_speaker left'}>
                             <div className={'radio-main-bottom_speaker-outer'}>
                                 <div className={'radio-main-bottom_speaker-inner'} />
                             </div>

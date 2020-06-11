@@ -28,9 +28,8 @@ export const DaysContainer = styled.article.attrs({
         margin: 0 auto 50px;
         background: ${colors.white};
         padding: 40px;
+        align-items: bottom;
     `};
-
-
 `;
 
 export const DayContainer = styled.div.attrs({

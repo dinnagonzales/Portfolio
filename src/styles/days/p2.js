@@ -27,8 +27,9 @@ export const ProjectTwo = styled.div.attrs({
     padding: 20px;
 
     .radio{
-        margin: 50px auto;
-        width: 550px;
+        margin: 0 auto 50px;
+        width: 100%;
+        max-width: 550px;
         
         &-top{
             height: 100px;
@@ -159,8 +160,11 @@ export const ProjectTwo = styled.div.attrs({
             &-bottom{
                 height: 65%;
                 display: grid;
-                grid-template-columns: 3fr 4fr 3fr;
+                grid-template-columns: 4fr 3fr;
                 grid-gap: 10px;
+                ${media.mediumUp`
+                    grid-template-columns: 3fr 4fr 3fr;
+                `};
                 &_tape{
                     height: 80%;
                     padding: 5px 10px;
@@ -194,7 +198,7 @@ export const ProjectTwo = styled.div.attrs({
                         background: rgb(74,67,85);
                         background: linear-gradient(280deg, rgba(74,67,85,1) 0%, rgba(137,114,153,1) 100%);
                         border: 5px solid ${colors.beige};
-                        margin: 15px auto;                        
+                        margin: 15px auto;
                         width: 140px;
                         height: 140px;
                         border-radius: 50%;
@@ -210,7 +214,14 @@ export const ProjectTwo = styled.div.attrs({
                         border-radius: 50%;
                         background: ${colors.grey};
                     }
+                
+                  &.left{
+                      ${media.small`
+                          display: none;
+                      `};
+                  }
                 }
+                
             }
         }
     }
@@ -221,7 +232,8 @@ export const TapeContainer = styled.div.attrs({
 })`
     margin: 10px auto;
     height: 100px;
-    width: 180px;
+    width: 100%;
+    min-width: 150px;
     border-radius: 15px;
     background: ${colors.lightBlack};
 `;

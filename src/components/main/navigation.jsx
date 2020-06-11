@@ -10,9 +10,10 @@ import {
 
 
 const Navigation = () => {
+    return null;
+    /*
     return(
         <Container>
-
             <ul>
                 <li>
                     <NavLink exact to={ '/' } activeClassName={ 'active' }>Home</NavLink>
@@ -24,5 +25,6 @@ const Navigation = () => {
                 
         </Container>
     );
+    */
 };
 export default Navigation;
